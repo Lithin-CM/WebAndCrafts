@@ -1,0 +1,211 @@
+
+@keyframes textFromLeft {
+    from{
+        transform: translateX(-200px) scale(0.5);
+    }
+    to{
+        transform: translateX(0) scale(1);
+    }
+}
+
+.carousel-headline,
+.carousel-subtext {
+    animation: textFromLeft 1s 1 linear;
+}
+
+
+
+
+@keyframes navbar {
+    from{
+        transform: translateX(-20px) translateY(-20px);
+    }
+    to{
+        transform: translate(0, 0);
+    }
+}
+
+.navbar {
+    animation: navbar 1s 1 linear;
+}
+
+
+
+@keyframes txt-anm {
+    from{
+        opacity: 0;
+        letter-spacing: -50px;
+        transform: translateX(-200px);
+    }
+    to{
+        opacity: 1;
+        letter-spacing: 0px;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes subTxtAnm {
+    from {
+        opacity: 0;
+        transform: translate(-50px, 100px);  /* Move from top-left corner */
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);  /* End at original position */
+    }
+}
+
+
+@keyframes rocket {
+    from {
+        opacity: 0;
+        transform: scale(0.5) translateX(-400px) translateY(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(2) translateX(0px) translateY(-80px);
+    }
+}
+
+
+
+
+
+
+
+/* case list animation */
+
+.case-study-list {
+    perspective: 1000px;
+}
+
+.case {
+    transition: .5s;
+    filter: brightness(0.1);
+    transform-style: preserve-3d;
+}
+
+.case:hover {
+    filter: brightness(1);
+    transform: translateZ(200px);
+}
+
+.case:hover + * {
+    filter: brightness(0.6);
+    transform: translateZ(150px) rotateY(40deg);
+}
+
+.case:hover + * + * {
+    filter: brightness(0.4);
+    transform: translateZ(70px) rotateY(20deg);
+}
+
+
+.case:hover + * + * + * {
+    filter: brightness(0.2);
+    transform: translateZ(30px) rotateY(10deg);
+}
+
+
+
+
+
+
+@keyframes titleLeftToCenter {
+    from {
+      opacity: 0;
+      transform: translateX(-500px) translateY(200px) scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) translateY(0) scale(1);
+    }
+  }
+  
+
+  .story-content h1,
+  .story-content p,
+  .stats,
+  .about-btn{
+    animation: titleLeftToCenter linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
+  }
+
+
+
+
+
+
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes arrowFadeIn {
+    from {
+        opacity: 0;
+        margin-left: 0;
+    }
+    to {
+        opacity: 1;
+        margin-left: 5px;
+    }
+}
+
+@keyframes appear {
+    from{
+      opacity: 0;
+      scale: 0.5;
+      transform: translateY(20px);
+    }
+    to{
+      opacity: 1;
+      scale: 1;
+      transform: translateY(0);
+  
+    }
+  }
+  
+
+  .services-section h1,
+  .service-box,
+  .service-box h2,
+  .service-box p {
+    animation: appear linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
+  }
+
+
+
+  @keyframes clients-titl {
+    from{
+        opacity: 0;
+        transform: translateX(900px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+
+
+  .clients-prt-one h1 {
+    animation: clients-titl linear forwards;
+    animation-timeline: view();
+    animation-range: entry 10% cover 50%;
+  }
+

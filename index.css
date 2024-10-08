@@ -1,0 +1,629 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --base-padding-lg: 100px;
+    --base-padding-sm: 20px;
+}
+
+body,html {
+    margin: 0;
+    padding: 0;
+    font-family: "Quicksand", sans-serif;
+    cursor: none;
+    background: black;
+}
+
+.base-padding {
+    padding: 0 var(--base-padding-lg);
+}
+
+
+
+/* Cursor */
+.cursor-dot {
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    transition: transform 0.4s;
+}
+
+.cursor-outline {
+    width: 30px;
+    height: 30px;
+    border: 2px solid hsla(0, 0%, 100%, 0.5);
+}
+
+.cursor-dot,
+.cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 999;
+}
+
+
+nav .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 8px);
+    height: 80px;
+    transition: 1s;
+    z-index: 10;
+}
+
+.hidden-nav {
+    transform: translateY(-100%); /* Move up to hide */
+}
+
+nav .scrolled {
+    background-color: black;
+}
+
+.navbar ul {
+    position: relative;
+    display: flex;
+    gap: 40px;
+    font-size: 20px;
+    list-style-type: none;
+    color: #fff;
+}
+
+.navbar ul li a {
+    all: unset;
+    position: relative;
+    display: inline-block;
+    color: #fff;
+}
+
+.navbar .nav-icons {
+    display: flex;
+    gap: 40px;
+}
+
+
+.main-container {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+}
+
+
+
+/* video carousel */
+.video-carousel {
+    background: black;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-container {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.video-container.active {
+    display: block;
+}
+
+/* Carousel Video */
+.carousel-video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+/* Headline and Subtext */
+.carousel-text {
+    position: absolute;
+    top: 50%;
+    left: var(--base-padding-lg);
+    transform: translateY(-50%);
+    color: white;
+    z-index: 1;
+}
+
+.carousel-headline {
+    font-family: Montserrat;
+    font-size: 4rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.carousel-subtext {
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+
+
+/* Pagination Lines */
+.pagination {
+    position: absolute;
+    bottom: 40px;
+    left: var(--base-padding-lg);
+    display: flex;
+    gap: 15px;
+}
+
+.line {
+    width: 40px;
+    height: 5px;
+    background-color: gray;
+    border-radius: 2px;
+    opacity: 0.5;
+}
+
+.line.active {
+    background-color: white;
+    opacity: 1;
+}
+
+
+
+.animation-container {
+    width: 100%;
+    height: 400vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.animation-sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+.animations {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+
+.animation {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    padding: var(--base-padding-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: black;
+}
+
+.animation p {
+    padding: 0 10%;
+    width: 60%;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.animation h1{
+    font-family: Montserrat;
+    font-size: 5em;
+    font-weight: 300;
+    margin: 0;
+}
+
+.lottie {
+    /* display: none; */
+    opacity: 0;
+    width: 300px; 
+    height: 300px; 
+    z-index: 6;
+    position: absolute;
+    left: 60%;
+    transform: translateY(-50px);
+}
+
+
+
+
+/* works  */
+
+.case-section {
+    flex-direction: column;
+}
+
+.title-two {
+    font-family: "Garamond", "Baskerville", "Georgia", serif;
+    padding: 0;
+    margin: 0;
+    padding-top: 70px;
+    padding-bottom: 0;
+    font-size: 3em;
+    opacity: .7;
+    font-weight: 400;
+    color: #fff;
+}
+
+.case-study-list {
+    width: 100%;
+    padding: 50px 150px;
+    display: flex;
+    overflow-x: scroll;
+    gap: 5px; /* Space between items */
+
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+}
+
+.case-study-list::-webkit-scrollbar {
+    display: none;  /* For Chrome, Safari, and Opera */
+}
+
+.case-study-list .case {
+    flex: 0 0 250px; /* Prevents shrinking and sets the width to 200px */
+    width: 250px; /* Fixed height */
+    overflow: hidden; /* Hide overflow content */
+    background-color: #fff; /* Background color for each case */
+}
+
+.case-study-list .case img {
+    height: auto;
+    width: 100%;
+    display: block; /* Prevents extra space below images */
+}
+
+.case-study-list .case .txt h1 {
+    margin: 10px;
+    font-size: .7em;
+    color: #000;
+}
+
+.case-study-list .case .txt p {
+    margin: 10px;
+    font-size: .6em;
+    color: #000;
+}
+
+
+
+
+
+/* our story*/
+
+.our-story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    color: #fff;
+    padding: 0 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Story Content */
+.story-content {
+    max-width: 700px;
+}
+
+.story-content h1 {
+    font-size: 3em;
+    margin: 0;
+    margin-bottom: 20px;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+.story-content p {
+    font-size: 1em;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    color: #bbb;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 1em;
+    font-weight: 700;
+    padding: 5px 10px;
+    color: #000;
+    background: #fff;
+}
+
+.stat-description {
+    font-size: 1em;
+    color: #000;
+    padding: 5px 10px;
+    background-color: #fff;
+}
+
+/* Button Styling */
+.about-btn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.about-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+
+
+
+
+/* Services section */
+
+/* General Styling for Services Section */
+.services-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f8f8f8;
+    flex-direction: column;
+}
+
+.services-section h1 {
+    font-size: 3em;
+    font-weight: 100;
+    color: #000;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeIn 1s forwards;
+}
+
+/* Services Box Grid */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Service Box */
+.service-box {
+    background-color: #fff;
+    padding: 30px;
+    width: 300px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.5s;
+}
+
+.service-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Service Headings */
+.service-box h2 {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+/* Service Descriptions */
+.service-box p {
+    color: #444;
+    font-size: .5em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Learn More Link */
+.learn-more {
+    text-decoration: none;
+    color: #000;
+    font-size: .7em;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.learn-more:hover {
+    color: #444;
+}
+
+.learn-more::after {
+    content: '→';
+    position: absolute;
+    margin-left: 5px;
+    transition: margin-left 0.3s ease;
+    opacity: 0;
+    animation: arrowFadeIn 0.5s forwards;
+}
+
+.learn-more:hover::after {
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+/* clients section */
+
+.clients-section {
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+.clients-prt-one {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 30%;
+    height: 100vh;
+}
+
+.clients-prt-one h1 {
+    font-family: "Garamond", "Baskerville", "Georgia", serif;
+    font-size: 2em;
+    font-weight: 100;
+}
+
+.clients-prt-two {
+    min-width: 50%;
+    height: fit-content;
+}
+
+.clients-prt-two {
+    margin-left: 40%;
+    padding: 50vh 0;
+    columns: 200px;
+}
+
+.clients-prt-two img {
+    margin: 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer styles */
+footer {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text color */
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap; /* Ensures responsiveness */
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    opacity: 1; /* Brightens on hover */
+}
+
+/* Social Media Icons */
+.social-media {
+    display: flex;
+    gap: 10px;
+}
+
+.social-media li {
+    list-style: none;
+}
+
+.social-media li a img {
+    width: 30px; /* Icon size */
+    filter: brightness(0) invert(1); /* Inverts icon color to white */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444; /* Adds a subtle line */
+    font-size: 14px;
+}
+
+/* Responsive Design */
